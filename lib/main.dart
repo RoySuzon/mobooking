@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
           inputDecorationTheme: InputDecorationTheme(
             border: OutlineInputBorder(borderSide: BorderSide.none),
             iconColor: AppColor.white,
+            filled: true,
+            fillColor: AppColor.geyblack,
             prefixIconColor: AppColor.white,
             suffixIconColor: AppColor.white,
           ),
