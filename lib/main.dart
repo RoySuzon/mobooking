@@ -22,14 +22,19 @@ class MyApp extends StatelessWidget {
               seedColor: AppColor.black, brightness: Brightness.dark),
           useMaterial3: false,
           // datePickerTheme: DatePickerThemeData(backgroundColor: ),
-
+          inputDecorationTheme: InputDecorationTheme(
+            border: OutlineInputBorder(borderSide: BorderSide.none),
+            iconColor: AppColor.white,
+            prefixIconColor: AppColor.white,
+            suffixIconColor: AppColor.white,
+          ),
           appBarTheme:
               AppBarTheme(backgroundColor: Colors.transparent, elevation: 0),
           elevatedButtonTheme: ElevatedButtonThemeData(
               style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(AppColor.yellow))),
           scaffoldBackgroundColor: AppColor.black),
-      home: InitialScreen(),
+      home: const InitialScreen(),
     );
   }
 }

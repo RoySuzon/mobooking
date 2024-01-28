@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobooking/constant/color.dart';
+import 'package:mobooking/home/ui/home_screen.dart';
 import 'package:mobooking/widgets/custome_text.dart';
 import 'package:mobooking/widgets/my_button.dart';
 
@@ -16,12 +18,24 @@ class SignUpScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          TextFormField(),
+          TextFormField(
+            decoration: InputDecoration(
+                prefixIcon: Icon(Icons.phone),
+                hintText: '(704) 555-0127',
+                hintStyle: GoogleFonts.nunitoSans(
+                    fontWeight: FontWeight.bold, fontSize: s10 * 2)),
+          ),
           SizedBox(height: s10 * 3.2),
           MyButton(
             title: 'Continue',
             backgroundColor: AppColor.yellow,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(),
+                  ));
+            },
             s10: s10,
           ),
           Spacer(),

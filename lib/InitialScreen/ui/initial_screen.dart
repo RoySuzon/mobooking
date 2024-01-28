@@ -135,7 +135,7 @@ class _InitialScreenState extends State<InitialScreen> {
                       height: MediaQuery.of(context).size.width,
                       width: MediaQuery.of(context).size.width,
                       child: Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmE2vwxy5KaCu7cRuYYdgNdQKddux5OYgGwsPo0kqP_xzLnsDV',
+                        'https://m.media-amazon.com/images/M/MV5BZGQ1NjQyNDMtNzFlZS00ZGIzLTliMWUtNGJkMGMzNTBjNDg0XkEyXkFqcGdeQXVyMTE1NDI5MDQx._V1_.jpg',
                         fit: BoxFit.cover,
                         alignment: Alignment.bottomCenter,
                       ),
