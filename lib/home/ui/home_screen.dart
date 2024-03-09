@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:mobooking/constant/color.dart';
 import 'package:mobooking/local/movi_list.dart';
 import 'package:mobooking/local/movies_list.dart';
@@ -15,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<MoviesList> _movies_list =
+  final List<MoviesList> _movies_list =
       movie_list.map((e) => MoviesList.fromMap(e)).toList();
   final _pageController = PageController(initialPage: 2, viewportFraction: .8);
   @override
@@ -96,43 +97,69 @@ class _HomeScreenState extends State<HomeScreen> {
                   MyRowButton(s10: s10, onTap: () {}, title: 'Comming Soon'),
                   SizedBox(height: s10 * 1.6),
                   SizedBox(
-                    height: s10 * 33,
+                    height: s10 * 35,
                     // width: 200,
                     // width: double.infinity,
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
-                      itemBuilder: (context, index) => Container(
-                        // height: s10 * ,
-                        width: s10 * 15,
+                      itemBuilder: (context, index) => SizedBox(
+                        width: s10 * 20,
                         child: Padding(
                           padding: EdgeInsets.all(s10 * .5),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Image.network(
-                                _movies_list[index].image.toString(),
-                                fit: BoxFit.cover,
-
-                                // height: double.infinity,
-                                // width: double.infinity,
-                                alignment: Alignment.bottomCenter,
+                              Container(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  // padding: EdgeInsets.all(20),
+                                  // height: s10,
+                                  // margin: EdgeInsets.all(10),
+                                  
+                                  height: s10 * 20,
+                                  width: s10 * 20,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(width: 2,color: AppColor.yellow),
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: NetworkImage(
+                                          _movies_list[index].image.toString()),
+                                    ),
+                                  ),
+                                  // child: Image.network(
+                                  //   _movies_list[index].image.toString(),
+                                  //   fit: BoxFit.cover,
+                                  //   // color: Colors.red,
+                                  //   // height: s10*20,
+                                  //    width: s10 * 20,
+                                  //   alignment: Alignment.bottomCenter,
+                                  // ),
+                                ),
                               ),
                               Expanded(
-                                  child: Container(
-                                      width: s10 * 15,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: .5,
-                                              color: AppColor.yellow)),
-                                      child: Center(child: Text('22')))),
+                                child: Container(
+                                  width: s10 * 20,
+                                    // height: s10 * 11,
+                                    // width: double.infinity,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: .5, color: AppColor.yellow)),
+                                    child: Column(
+                                      children: [
+                                        myHeadingText( context,
+                                            movie_list[index]["title"],fs: s10*1.5),
+                                      ],
+                                    )),
+                              ),
                             ],
                           ),
                         ),
                       ),
                       itemCount: _movies_list.length,
                       separatorBuilder: (BuildContext context, int index) {
-                        return SizedBox(width: s10 * 1.6);
+                        return SizedBox(width: s10);
                       },
                     ),
                   ),

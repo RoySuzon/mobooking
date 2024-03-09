@@ -20,7 +20,7 @@ class SignUpScreen extends StatelessWidget {
         children: [
           TextFormField(
             decoration: InputDecoration(
-                prefixIcon: Icon(Icons.phone),
+                prefixIcon: const Icon(Icons.phone),
                 hintText: '(704) 555-0127',
                 hintStyle: GoogleFonts.nunitoSans(
                     fontWeight: FontWeight.bold, fontSize: s10 * 2)),
@@ -65,7 +65,7 @@ class SignUpScreen extends StatelessWidget {
           MyButton(
             textColor: AppColor.white,
             title: 'Continue',
-            icon: Icon(Icons.tiktok),
+            icon: const Icon(Icons.tiktok),
             backgroundColor: AppColor.geyblack,
             onTap: () {},
             s10: s10,

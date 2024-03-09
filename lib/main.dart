@@ -18,11 +18,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        
           colorScheme: ColorScheme.fromSeed(
               seedColor: AppColor.black, brightness: Brightness.dark),
           useMaterial3: false,
           // datePickerTheme: DatePickerThemeData(backgroundColor: ),
-          inputDecorationTheme: InputDecorationTheme(
+          inputDecorationTheme: const InputDecorationTheme(
             border: OutlineInputBorder(borderSide: BorderSide.none),
             iconColor: AppColor.white,
             filled: true,
@@ -31,8 +32,8 @@ class MyApp extends StatelessWidget {
             suffixIconColor: AppColor.white,
           ),
           appBarTheme:
-              AppBarTheme(backgroundColor: Colors.transparent, elevation: 0),
-          elevatedButtonTheme: ElevatedButtonThemeData(
+              const AppBarTheme(backgroundColor: Colors.transparent, elevation: 0),
+          elevatedButtonTheme: const ElevatedButtonThemeData(
               style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(AppColor.yellow))),
           scaffoldBackgroundColor: AppColor.black),
